@@ -1,0 +1,257 @@
+/* 🌑 Bendri stiliai */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #121212; /* Juodas fonas */
+  color: #ffffff; /* Balta spalva */
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+/* 🔻 NAVBAR STILIAI */
+.navbar {
+  position: fixed;  /* NAV bus visada viršuje */
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #d90000; /* Raudona */
+  padding: 15px 20px;
+  color: white;
+  text-align: left;
+  z-index: 1000; /* Kad būtų virš visų kitų elementų */
+  box-shadow: 0px 4px 10px rgba(255, 0, 0, 0.3);
+}
+
+.navbar ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 15px;
+}
+
+.navbar ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.navbar ul li a:hover {
+  color: #ff4d4d;
+}
+/* 🔳 Užduočių sąrašas */
+.task-container {
+  background: #1E1E1E; /* Tamsiai pilkas fonas */
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(255, 0, 0, 0.5); /* Raudonas šešėlis */
+}
+
+/* 📝 Užduočių įvedimo laukas */
+.task-form input {
+  padding: 10px;
+  width: 60%;
+  border: 1px solid #ff4d4d; /* Raudonas kontūras */
+  border-radius: 5px;
+  background-color: #222;
+  color: white;
+}
+
+/* 🔘 Mygtukai */
+button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.add-btn {
+  background-color: #ff4d4d;
+  color: white;
+}
+
+.add-btn:hover {
+  background-color: #ff1a1a;
+}
+
+.complete-btn {
+  background-color: #ff4d4d;
+  color: white;
+}
+
+.complete-btn:hover {
+  background-color: #ff1a1a;
+}
+
+.delete-btn {
+  background-color: #d90000;
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: #990000;
+}
+
+/* ✅ Užduočių sąrašas */
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  background: #222;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+  box-shadow: 0px 0px 5px rgba(255, 0, 0, 0.3);
+}
+
+.completed {
+  text-decoration: line-through;
+  color: gray;
+}
+
+/* 🛒 PRODUKTŲ IR KREPŠELIO STILIAI */
+.product, .cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px; /* Padidiname padding */
+  background: #222; /* Juodas fonas */
+  margin: 15px 0; /* Didesnis tarpas tarp kortelių */
+  border-radius: 8px;
+  box-shadow: 0px 0px 5px rgba(255, 0, 0, 0.3);
+}
+
+/* 🔻 Mygtukai (didesnis tarpas) */
+button {
+  padding: 12px 15px; /* Didesni mygtukai */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-left: 10px; /* Tarpas tarp mygtukų */
+}
+
+/* 🔻 Mygtukų tarpai kiekvienoje kortelėje */
+/* 🔻 Produktų ir krepšelio kortelių atnaujinimas */
+.product, .cart-item {
+  max-width: 400px; /* Apriboja kortelių plotį */
+  width: 100%; /* Užtikrina, kad kortelės bus proporcingos */
+  margin: 15px auto; /* Centruoja elementus */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background: #222;
+  border-radius: 10px;
+  box-shadow: 0px 0px 8px rgba(255, 0, 0, 0.4);
+}
+
+/* 🔻 Mygtukų tarpai */
+.product button, .cart-item button {
+  margin-left: 15px; /* Dar daugiau tarpo tarp mygtukų */
+}
+
+/* 🔻 "Bendra suma" stiliai */
+.total-price {
+  font-size: 22px;
+  font-weight: bold;
+  color: #ff4d4d;
+  margin-top: 20px;
+  text-shadow: 0px 0px 5px rgba(255, 0, 0, 0.6);
+  padding: 10px;
+  background: rgba(255, 0, 0, 0.2);
+  border-radius: 8px;
+  display: inline-block;
+}
+
+/* 🔻 "Pridėti" mygtukas */
+.add-btn {
+  background-color: #ff4d4d;
+  color: white;
+  transition: 0.3s;
+}
+
+.add-btn:hover {
+  background-color: #d90000; /* Tamsesnė raudona užvedus */
+}
+
+/* 🔻 "Pašalinti" mygtukas */
+.delete-btn {
+  background-color: #d90000;
+  color: white;
+  transition: 0.3s;
+}
+
+.delete-btn:hover {
+  background-color: #a30000; /* Dar tamsesnė raudona užvedus */
+}
+
+/* 🔢 Skaičių žaidimo konteineris */
+.guess-game-container {
+  max-width: 400px;
+  margin: auto;
+  background: #1E1E1E;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(255, 0, 0, 0.5);
+  text-align: center;
+}
+
+/* 🔢 Skaičių žaidimo įvedimas */
+.guess-form input {
+  padding: 10px;
+  width: 60%;
+  border: 1px solid #ff4d4d;
+  border-radius: 5px;
+  background-color: #222;
+  color: white;
+}
+
+.guess-btn {
+  background-color: #ff4d4d;
+  color: white;
+  padding: 10px;
+}
+
+.guess-btn:hover {
+  background-color: #ff1a1a;
+}
+
+/* 🟠 Skaičių žaidimo žinutės spalvos */
+.message {
+  font-size: 18px;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.message.red {
+  color: #ff4d4d;
+}
+
+.message.blue {
+  color: #4da6ff;
+}
+
+.message.orange {
+  color: #ffcc00;
+}
+
+.message.green {
+  color: #33cc33;
+}
+
+/* 📌 Bendros sumos tekstas */
+.total-price {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ff4d4d;
+  margin-top: 15px;
+  text-shadow: 0px 0px 5px rgba(255, 0, 0, 0.5);
+}
