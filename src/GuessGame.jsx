@@ -7,6 +7,9 @@ const GuessGame = () => {
   const [message, setMessage] = useState("");  // Žinutė vartotojui
   const [messageColor, setMessageColor] = useState("black");  // Žinutės spalva
   const [attempts, setAttempts] = useState(0);  // Bandymų skaičius
+  const [attemptsList, setAttemptsList] = useState([]); // Visų spėjimų sąrašas
+
+
   
 
   // Sugeneruoti atsitiktinį skaičių kai komponentas užsikrauna
@@ -29,6 +32,8 @@ const GuessGame = () => {
       return;
     }
 
+    setAttempts(attempts + 1);
+    setAttemptsList([...attemptsList, userGuess]); // Prideda bandymą į sąrašą
     const difference = Math.abs(userGuess - randomNumber);
 
     if (userGuess > randomNumber) {
@@ -60,6 +65,7 @@ const GuessGame = () => {
     setMessage("");
     setMessageColor("black");
     setAttempts(0);
+    setAttemptsList([]); // Išvalo bandymų sąrašą
   };
 
   return (
@@ -76,7 +82,14 @@ const GuessGame = () => {
         <button type="submit" className="guess-btn">Spėti</button>
       </form>
       <p className="message" style={{ color: messageColor }}>{message}</p>
-      
+          {/* Rodome bandymus tik kai atspėja skaičių */}
+          {messageColor === "green" && attemptsList.length > 0 && (
+          <div className="attempts-container">
+              <h3>Jūsų bandymai:</h3>
+            <p>{attemptsList.join(", ")}</p>
+          </div>
+)}
+
       {/* Reset mygtukas */}
       <button onClick={resetGame} className="reset-btn">Žaisti dar kartą</button>
     </div>
